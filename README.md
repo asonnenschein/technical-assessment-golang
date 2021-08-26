@@ -38,6 +38,7 @@ http://localhost:8080/osm-intl/1/0/0.jpeg
 - After that, it would make sense to add more graceful failure mechanisms to the HTTP API.  While the service is generous in accepting wildcard paths, the current implementation is optimistic and is only guaranteed (i.e. tested) to work with properly formatted PNG and JPEG XYZ map tiles.
 - The "WildCard" service handler is busy, i.e. it does more than one thing.  It would probably make sense to pull the image processing components out of the handler into it's own utility method that could be better unit tested.
 - Speaking of tests, only a single feature test is included in this software, to demonstrate competency in automated testing.  There are no unit tests.  At a high-level, an end-to-end feature test should, in theory, cover optimistic use cases.
+- The same code that is tested (handlers.go) is also the only file that includes inline documentation, to demonstrate competency in writing docstrings.
 - There is a requirement in the spec to support both paletted and non-paletted images.  My understanding is that PNG is a paletted image format and JPEG is not a paletted image format.  Therefore supporting both of these content types satisfies the paletted vs. non-paletted requirement.
 
 ## Sources, Documentation, etc
